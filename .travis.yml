@@ -1,0 +1,21 @@
+language: python
+python:
+- 3.4
+sudo: required
+dist: trusty
+before_install:
+- lsb_release -a
+- env | sort
+- type -a python
+- type -a python3
+- type -a python3.4
+- virtualenv /tmp/venv
+- source /tmp/venv/bin/activate
+- env | sort
+- pip install pytest
+- ls -l /tmp/venv/bin /tmp/venv/lib/python3.4/site-packages
+# install:
+# script:
+# - py.test -v -s tests
+# after_failure:
+
