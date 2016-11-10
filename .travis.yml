@@ -9,11 +9,19 @@ before_install:
 - type -a python
 - type -a python3
 - type -a python3.4
-- virtualenv -p python3.4 /tmp/venv
-- source /tmp/venv/bin/activate
-- env | sort
-- pip install pytest
-- ls -l /tmp/venv/bin /tmp/venv/lib/python3.4/site-packages
+# - virtualenv -p python3.4 /tmp/venv
+# - source /tmp/venv/bin/activate
+# - env | sort
+# - pip install pytest
+# - ls -l /tmp/venv/bin /tmp/venv/lib/python3.4/site-packages
+- sudo apt-add-repository -y ppa:ansible/ansible
+- sudo apt-get -qq update
+- sudo apt-get install -y ansible
+install:
+- ansible-playbook -vvv --inventory-file=inventory playbook.yml
+before_script:
+- ls -l /tmp/warcprox-ve34/bin
+- ls -l /tmp/warcprox-ve34/lib/python3.4/site-packages
 script:
 - true
 
