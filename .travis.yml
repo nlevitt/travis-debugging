@@ -19,10 +19,12 @@ install:
 - pip install --no-input --upgrade --pre --cache-dir=/tmp/pip-cache git+https://github.com/internetarchive/warcprox.git#egg=warcprox
 - deactivate
 - ansible-playbook -vvv --inventory-file=inventory playbook.yml
-script:
+- cat /tmp/ansible-pip-log
 - ls -l /tmp/non-ansible-venv/bin
 - ls -l /tmp/non-ansible-venv/lib/python3.4/site-packages
 - ls -l /tmp/ansible-venv/bin
 - ls -l /tmp/ansible-venv/lib/python3.4/site-packages
 - /tmp/ansible-venv/bin/pip --version
+script:
+- true
 

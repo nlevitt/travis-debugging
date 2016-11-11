@@ -46,5 +46,5 @@
   - pip: name=git+https://github.com/internetarchive/warcprox.git#egg=warcprox
          virtualenv=/tmp/ansible-venv
          virtualenv_python=python3.4
-         extra_args='--no-input --upgrade --pre --cache-dir=/tmp/pip-cache'
+         extra_args='--no-input --log=/tmp/ansible-pip-log --upgrade --pre --cache-dir=/tmp/pip-cache'
 
