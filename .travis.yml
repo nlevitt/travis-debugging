@@ -16,7 +16,6 @@ install:
 - virtualenv -p python3.4 /tmp/non-ansible-venv
 - source /tmp/non-ansible-venv/bin/activate
 - env | sort
-- pip install pytest
 - pip install --no-input --upgrade --pre --cache-dir=/tmp/pip-cache git+https://github.com/internetarchive/warcprox.git#egg=warcprox
 - deactivate
 - ansible-playbook --inventory-file=inventory playbook.yml # -vvv 
@@ -25,4 +24,5 @@ script:
 - ls -l /tmp/non-ansible-venv/lib/python3.4/site-packages
 - ls -l /tmp/ansible-venv/bin
 - ls -l /tmp/ansible-venv/lib/python3.4/site-packages
+- /tmp/ansible-venv/bin/pip --version
 
