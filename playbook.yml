@@ -1,37 +1,44 @@
 ---
 - hosts: warcprox
   tasks:
-  - shell: 'env | sort'
+  - name: 'env | sort'
+    shell: 'env | sort'
     register: out
   - debug: msg="{{out.stdout_lines}}"
   # - debug: msg="{{out.stderr_lines}}"
 
-  - shell: which python3.4
+  - name: which python3.4
+    shell: which python3.4
     register: out
   - debug: msg="{{out.stdout_lines}}"
   # - debug: msg="{{out.stderr_lines}}"
 
-  - shell: which pip
+  - name: which pip
+    shell: which pip
     register: out
   - debug: msg="{{out.stdout_lines}}"
   # - debug: msg="{{out.stderr_lines}}"
 
-  - shell: which pip3
+  - name: which pip3
+    shell: which pip3
     register: out
   - debug: msg="{{out.stdout_lines}}"
   # - debug: msg="{{out.stderr_lines}}"
 
-  - shell: which virtualenv
+  - name: which virtualenv
+    shell: which virtualenv
     register: out
   - debug: msg="{{out.stdout_lines}}"
   # - debug: msg="{{out.stderr_lines}}"
 
-  - shell: pip --version
+  - name: pip --version
+    shell: pip --version
     register: out
   - debug: msg="{{out.stdout_lines}}"
   # - debug: msg="{{out.stderr_lines}}"
 
-  - shell: pip3 --version
+  - name: pip3 --version
+    shell: pip3 --version
     register: out
   - debug: msg="{{out.stdout_lines}}"
   # - debug: msg="{{out.stderr_lines}}"
