@@ -1,6 +1,12 @@
 ---
 - hosts: warcprox
   tasks:
+  - shell: env | sort
+  - shell: type -a python3.4
+  - shell: type -a pip
+  - shell: type -a pip3
+  - shell: pip --version
+  - shell: pip3 --version
   - pip: name=git+https://github.com/internetarchive/warcprox.git#egg=warcprox
          virtualenv=/tmp/ansible-venv
          virtualenv_python=python3.4
