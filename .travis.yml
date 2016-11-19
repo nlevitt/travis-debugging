@@ -1,21 +1,22 @@
 language: python
 python:
 - 3.4
+- fake-version
 sudo: required
 dist: trusty
-before_install:
-- lsb_release -a
-- env | sort
-- type -a python
-- type -a python3
-- type -a python3.4
-- sudo pip install ansible==2.1.3.0
-- ansible-playbook --version
-install:
-- ansible-playbook -vvv --inventory-file=inventory playbook.yml
-- ls -l /tmp/ansible-venv/bin
-- ls -l /tmp/ansible-venv/lib/python3.4/site-packages
-- /tmp/ansible-venv/bin/pip --version
+# before_install:
+# - lsb_release -a
+# - env | sort
+# - type -a python
+# - type -a python3
+# - type -a python3.4
+# - sudo pip install ansible==2.1.3.0
+# - ansible-playbook --version
+# install:
+# - ansible-playbook -vvv --inventory-file=inventory playbook.yml
+# - ls -l /tmp/ansible-venv/bin
+# - ls -l /tmp/ansible-venv/lib/python3.4/site-packages
+# - /tmp/ansible-venv/bin/pip --version
 script:
 - true
 
